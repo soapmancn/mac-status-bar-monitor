@@ -11,6 +11,7 @@ RESOURCES_DIR="${CONTENTS_DIR}/Resources"
 
 cd "${PROJECT_DIR}"
 
+swift build -c release
 BIN_PATH="$(swift build -c release --show-bin-path)"
 
 rm -rf "${APP_DIR}"
