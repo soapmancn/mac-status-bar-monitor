@@ -17,7 +17,23 @@ MacStatusBarMonitor 是一个轻量的 macOS 状态栏监控工具，用紧凑�
 3. 打开 DMG，把 `MacStatusBarMonitor.app` 拖到 `Applications`。
 4. 启动应用后，在状态栏点击监控文本即可打开菜单。
 
-如果 macOS 提示应用来自未识别开发者，是因为当前 Release 使用 ad-hoc 签名，没有 Apple Developer ID 公证。可以在 `System Settings > Privacy & Security` 里允许打开，或从源码自行构建。
+如果 macOS 提示下面这类错误，是因为当前 Release 使用 ad-hoc 签名，没有 Apple Developer ID 公证：
+
+```text
+Apple 无法验证 “MacStatusBarMonitor.app” 是否包含可能危害 Mac 安全或泄漏隐私的恶意软件。
+```
+
+可以用其中一种方式打开：
+
+1. 打开 `System Settings > Privacy & Security`，找到被阻止的 `MacStatusBarMonitor.app`，点击 `Open Anyway` / `仍要打开`。
+2. 或者在终端移除下载隔离属性：
+
+```bash
+xattr -dr com.apple.quarantine /Applications/MacStatusBarMonitor.app
+open /Applications/MacStatusBarMonitor.app
+```
+
+如果还没有拖到 `Applications`，请把命令里的路径换成实际 app 路径。
 
 ## Local Build
 
