@@ -2,6 +2,8 @@
 
 MacStatusBarMonitor 是一个轻量的 macOS 状态栏监控工具，用紧凑的菜单栏文字实时显示 CPU、内存、磁盘和网络速度。
 
+![MacStatusBarMonitor running in the macOS menu bar](docs/menu-bar-preview.png)
+
 ## Features
 
 - 状态栏显示 `C` / `M` / `D` 百分比，分别代表 CPU、Memory、Disk。
